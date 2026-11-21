@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A live weather dashboard with city search, temperature, humidity and wind speed.">
+  <title>Atmos — Weather Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Atmos home">
+        <span class="brand-icon">☼</span><span>atmos<span class="brand-period">.</span></span>
+      </a>
+      <span class="live-indicator"><i></i> LIVE WEATHER</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">WEATHER, AT A GLANCE</p>
+      <h1>Know your <span>sky.</span></h1>
+      <p class="intro-copy">A clear view of what's happening outside, wherever you are.</p>
+    </section>
+
+    <section class="search-panel" aria-label="Search weather by city">
+      <form id="searchForm" class="search-form">
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <label class="sr-only" for="cityInput">Enter city name</label>
+        <input id="cityInput" type="search" placeholder="Search a city — e.g. New Delhi" autocomplete="off" required>
+        <button id="searchButton" type="submit">Search <span>→</span></button>
+      </form>
+      <p class="search-hint">Try a city name to get its current weather conditions.</p>
+    </section>
+
+    <section id="weatherPanel" class="weather-panel" hidden aria-live="polite">
+      <div class="weather-heading">
+        <div>
+          <p class="eyebrow">CURRENT CONDITIONS</p>
+          <h2 id="cityName">—</h2>
+          <p id="localTime" class="local-time">—</p>
+        </div>
+        <div id="weatherIcon" class="weather-icon" aria-hidden="true">☀</div>
+      </div>
+
+      <div class="current-weather">
+        <div class="temperature-wrap">
+          <strong id="temperature">--°</strong>
+          <span id="condition">—</span>
+        </div>
+        <p id="feelsLike" class="feels-like">Feels like —</p>
+      </div>
+
+      <div class="metric-grid">
+        <article class="metric-card">
+          <span class="metric-icon">◌</span>
+          <span class="metric-label">HUMIDITY</span>
+          <strong id="humidity">—<small>%</small></strong>
+          <span class="metric-note">Relative humidity</span>
+        </article>
+        <article class="metric-card">
+          <span class="metric-icon">↝</span>
+          <span class="metric-label">WIND SPEED</span>
+          <strong id="windSpeed">—<small> km/h</small></strong>
+          <span class="metric-note">At 10 metres</span>
+        </article>
+        <article class="metric-card">
+          <span class="metric-icon">⌁</span>
+          <span class="metric-label">WIND DIRECTION</span>
+          <strong id="windDirection">—<small>°</small></strong>
+          <span class="metric-note">Compass bearing</span>
+        </article>
+      </div>
+
+      <div class="weather-footer">
+        <span id="updatedAt">Updated just now</span>
+        <button id="refreshButton" class="refresh-button" type="button">↻ Refresh weather</button>
+      </div>
+    </section>
+
+    <section id="welcomePanel" class="welcome-panel">
+      <div class="welcome-art" aria-hidden="true">
+        <div class="sun"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+      </div>
+      <h2>Your forecast starts here</h2>
+      <p>Search for a city above to see its latest temperature, humidity and wind conditions.</p>
+    </section>
+
+    <div id="errorMessage" class="error-message" role="alert" hidden></div>
+    <div id="loadingMessage" class="loading-message" role="status" hidden>
+      <span class="spinner"></span> Fetching weather data…
+    </div>
+
+    <footer class="page-footer">
+      <span>Built with HTML, CSS &amp; JavaScript</span>
+      <span>Weather data by <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a></span>
+      <span>Created by <strong>Adarsh Verma</strong></span>
+    </footer>
+  </main>
+</body>
+</html>

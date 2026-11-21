@@ -1,0 +1,6 @@
+Project: Atmos — Real-Time Weather Dashboard
+Student: Adarsh Verma
+Topic: Asynchronous JavaScript & RESTful APIs
+
+To run: Extract the ZIP, open index.html in a modern browser and search for a city.
+An internet connection is required. The project uses the public Open-Meteo API and does not require an API key.
